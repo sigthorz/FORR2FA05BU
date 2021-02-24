@@ -31,7 +31,7 @@ def deilanlegt(tolulisti, tala):
             deilanlegt_Listi.append(q)
     return deilanlegt_Listi
 
-'''
+
 gera_lista(100,200)
 print("\nHérna er listinn með tvípunkti á milli hverri tölu: \n")
 syna_lista(listi1)
@@ -40,7 +40,7 @@ print(medaltal(50,25,259,2,58,31,30))
 print("\nMeðaltal 3 talna\n")
 print(medaltal(75,79,47))
 print(deilanlegt(listi2,2))
-'''
+
 listi_nemendur = []
 with open('nemendur.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
