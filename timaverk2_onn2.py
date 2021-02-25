@@ -33,7 +33,7 @@ def deilanlegt(tolulisti, tala):
 
 
 gera_lista(100,200)
-print("\nHérna er listinn með tvípunkti á milli hverri tölu: \n")
+print("\nHérna er listinn með tvípunkti á milli hverri einustu tölu: \n")
 syna_lista(listi1)
 print("\nMeðaltal 7 talna\n")
 print(medaltal(50,25,259,2,58,31,30))
@@ -41,16 +41,35 @@ print("\nMeðaltal 3 talna\n")
 print(medaltal(75,79,47))
 print(deilanlegt(listi2,2))
 
-listi_nemendur = []
+
+print("\nHérna eru öll nöfnin sem eru í skránni.\n")
 with open('nemendur.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for row in csv_reader:
         print(f'{"".join(row)}')
-        listi_nemendur.append(row)
+        
     
-nafn = input("sláðu inn nafn: ")
-with open('nemendur.csv', mode='w') as nemendur_file:
+nafn = input("\nsláðu inn nafn einstaklings: ")
+with open('nemendur.csv', mode='a') as nemendur_file:
     nemendur_writer = csv.writer(nemendur_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
     nemendur_writer.writerow([nafn])
-    nemendur_writer.writerow(listi_nemendur)
+
+print("\nHérna eru öll nöfnin sem eru í uppfærðu skránni.\n")
+with open('nemendur.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        print(f'{"".join(row)}')
+        
+
+
+class Ferningur:
+    def __init__(self,hlidA,hlidB):
+        self.hlidA = hlidA
+        self.hlidB = hlidB
+    
+    def __str__(self):
+        return "blank"
+    
+    def staerri(self,ferningur2):
+        return "blank"
